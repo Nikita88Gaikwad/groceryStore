@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/CSS/payment.css" />
+  <style>
+    body {
+      font-family: Arial;
+      font-size: 17px;
+      padding: 0px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      display: -ms-flexbox;
+      /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap;
+      /* IE10 */
+      flex-wrap: wrap;
+      margin: 0 -16px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .col-25 {
+      -ms-flex: 25%;
+      /* IE10 */
+      flex: 25%;
+    }
+
+    .col-50 {
+      -ms-flex: 50%;
+      /* IE10 */
+      flex: 50%;
+    }
+
+    .col-75 {
+      -ms-flex: 75%;
+      /* IE10 */
+      flex: 76%;
+    }
+
+    .col-25,
+    .col-50,
+    .col-75 {
+      padding: 0 16px;
+    }
+
+    .container {
+      background-color: #f2f2f2;
+      padding: 5px 20px 15px 20px;
+      /* border: 1px solid lightgrey; */
+      border: 1px solid rgb(8, 8, 8);
+      border-radius: 3px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+    }
+
+    .btn {
+      background-color: #bb29bb;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .btn:hover {
+      background: #bb29bb;
+      color: #fff;
+    }
+
+    a {
+      color: #2196f3;
+    }
+
+    hr {
+      border: 1px solid lightgrey;
+    }
+
+    span.price {
+      float: right;
+      color: grey;
+    }
+
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column-reverse;
+      }
+
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+
+    select {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: white;
+      font-size: 17px;
+      box-sizing: border-box;
+      /* Include padding and border in width calculation */
+    }
+  </style>
+</head>
+
+<body>
+  <br /><br />
+  <div class="row">
+    <div class="col-75">
+      <div class="container">
+        <form id="paymentForm">
+          <div class="row">
+            <div class="col-50">
+              <h3>Billing Address</h3>
+              <label for="fname"><i class="fa fa-user"></i> Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your Name" />
+              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+              <input type="text" id="email" name="email" placeholder="name@gmail.com" />
+              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+              <input type="text" id="adr" name="address" placeholder="address..." />
+              <label for="city"><i class="fa fa-institution"></i> City</label>
+              <select id="city" name="city">
+                <option value="">Select City</option>
+                <option value="Ahmednagar">Ahmednagar</option>
+                <option value="Akola">Akola</option>
+                <option value="Amravati">Amravati</option>
+                <option value="Aurangabad">Aurangabad</option>
+                <option value="Beed">Beed</option>
+                <option value="Bhandara">Bhandara</option>
+                <option value="Buldhana">Buldhana</option>
+                <option value="Chandrapur">Chandrapur</option>
+                <option value="Dhule">Dhule</option>
+                <option value="Gadchiroli">Gadchiroli</option>
+                <option value="Gondia">Gondia</option>
+                <option value="Hingoli">Hingoli</option>
+                <option value="Jalgaon">Jalgaon</option>
+                <option value="Jalna">Jalna</option>
+                <option value="Kolhapur">Kolhapur</option>
+                <option value="Latur">Latur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Nanded">Nanded</option>
+                <option value="Nandurbar">Nandurbar</option>
+                <option value="Nashik">Nashik</option>
+                <option value="Osmanabad">Osmanabad</option>
+                <option value="Palghar">Palghar</option>
+                <option value="Parbhani">Parbhani</option>
+                <option value="Pune">Pune</option>
+                <option value="Raigad">Raigad</option>
+                <option value="Ratnagiri">Ratnagiri</option>
+                <option value="Sangli">Sangli</option>
+                <option value="Satara">Satara</option>
+                <option value="Sindhudurg">Sindhudurg</option>
+                <option value="Solapur">Solapur</option>
+                <option value="Thane">Thane</option>
+                <option value="Wardha">Wardha</option>
+                <option value="Washim">Washim</option>
+                <option value="Yavatmal">Yavatmal</option>
+              </select>
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="state">State</label>
+                  <select id="state" name="state">
+                    <option value="">Select State</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                  </select>
+                </div>
+                
+                <div class="col-50">
+                  <label for="zip">ZIP Code (6 digits)</label>
+              <input type="text" id="zip" name="zip" placeholder="ZIP Code">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color: navy"></i>
+                <i class="fa fa-cc-amex" style="color: blue"></i>
+                <i class="fa fa-cc-mastercard" style="color: red"></i>
+                <i class="fa fa-cc-discover" style="color: orange"></i>
+              </div>
+              <label for="cname">Cardholder Name</label>
+              <input type="text" id="cname" name="cardname" placeholder="name" />
+              <label for="ccnum">Credit card number (12 digits)</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="111122223333">
+              <label for="expmonth">Exp Month</label>
+              <select id="expmonth" name="expmonth">
+                <option value="">Select Month</option>
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <select id="expyear" name="expyear">
+                    <option value="">Select Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <!-- Add more years as needed -->
+                  </select>
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV (3 digits)</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="CVV">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <input type="button" onclick="validateForm()" value="Make Payment" class="btn" />
+          <div class="submit submit-hidden"></div>
+        </form>
+      </div>
+    </div>
+    <div class="col-25"></div>
+  </div>
+  <script>
+
+
+const ccnumInput = document.getElementById('ccnum');
+const zipInput = document.getElementById('zip');
+const cvvInput = document.getElementById('cvv');
+
+    ccnumInput.addEventListener('input', function() {
+      const ccnumValue = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+      const isValidLength = ccnumValue.length === 12;
+
+      if (!isValidLength) {
+        
+        this.value = ccnumValue.slice(0, 12); // Limit to 12 characters
+        this.setCustomValidity('Credit card number must be exactly 12 digits.');
+        this.reportValidity();
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+
+    zipInput.addEventListener('input', function() {
+  const zipValue = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+  const isValidLength = zipValue.length === 6;
+
+  if (!isValidLength) {
+    this.value = zipValue.slice(0, 6); // Limit to 6 characters
+    this.setCustomValidity('ZIP code must be exactly 6 digits.');
+    this.reportValidity();
+  } else {
+    this.setCustomValidity('');
+  }
+});
+
+
+cvvInput.addEventListener('input', function() {
+  const cvvValue = this.value.replace(/\D/g, ''); // Remove non-numeric characters
+  const isValidLength = cvvValue.length === 3;
+
+  if (!isValidLength) {
+    this.value = cvvValue.slice(0, 3); // Limit to 3 characters
+    this.setCustomValidity('CVV must be exactly 3 digits.');
+    this.reportValidity();
+  } else {
+    this.setCustomValidity('');
+  }
+});
+
+    function validateForm() {
+      const form = document.getElementById('paymentForm');
+      const inputs = form.querySelectorAll('input[type="text"]');
+      const state = form.querySelector('#state').value;
+      const city = form.querySelector('#city').value;
+      const expMonth = form.querySelector('#expmonth').value;
+      const expYear = form.querySelector('#expyear').value;
+      const ccnumValue = document.getElementById('ccnum').value.replace(/\D/g, ''); // Remove non-numeric characters
+      const zipValue = document.getElementById('zip').value.replace(/\D/g, '');
+
+      let allFilled = true;
+
+      inputs.forEach(input => {
+        if (input.value.trim() === '') {
+          allFilled = false;
+          input.style.borderColor = "red";
+        } else {
+          input.style.borderColor = "";
+        }
+      });
+
+      
+
+      
+
+
+      if (expMonth === '') {
+        document.getElementById('expmonth').style.borderColor = "red";
+        allFilled = false;
+      } else {
+        document.getElementById('expmonth').style.borderColor = "";
+      }
+
+      if (expYear === '') {
+        document.getElementById('expyear').style.borderColor = "red";
+        allFilled = false;
+      } else {
+        document.getElementById('expyear').style.borderColor = "";
+      }
+
+      if (state !== 'Maharashtra') {
+        document.getElementById('state').style.borderColor = "red";
+        allFilled = false;
+      } else {
+        document.getElementById('state').style.borderColor = "";
+      }
+
+      if (city === '') {
+        document.getElementById('city').style.borderColor = "red";
+        allFilled = false;
+      } else {
+        document.getElementById('city').style.borderColor = "";
+      }
+
+      if (ccnumValue.length !== 12) {
+        document.getElementById('ccnum').style.borderColor = "red";
+        allFilled = false;
+      } else {
+        document.getElementById('ccnum').style.borderColor = "";
+      }
+
+      if (allFilled) {
+        if (ccnumValue.length === 12) {
+          setTimeout(() => {
+            window.location.href = '/HTML/home.html';
+          }, 1000);
+        } else {
+          alert('Please enter a 12-digit credit card number.');
+        }
+      } else {
+        alert('Please fill all the details correctly.');
+      }
+    }
+  </script>
+</body>
+
+</html>
