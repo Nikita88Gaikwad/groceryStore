@@ -1,0 +1,65 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 41px auto;
+    padding: 56px;
+    border: 58px solid #ccc;
+    border-radius: 5px;
+}
+
+.container .alert {
+    display: none;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.container .inputBox {
+    margin-bottom: 15px;
+}
+
+.container .inputBox input,
+.container .inputBox textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+
+.container .inputBox textarea {
+    resize: vertical;
+}
+
+.container .inputBox button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container .inputBox button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+.error {
+    border: 1px solid red;
+}

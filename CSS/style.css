@@ -38,6 +38,24 @@ section {
     padding: 2rem 9%;
 }
 
+.logout-button {
+    background-color: #eee; 
+    color: #000; 
+    padding: 15px 20px; 
+    border: none; 
+    cursor: pointer; 
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.logout-button:hover {
+    background-color: #bb29bb; 
+}
+
+.logout-button:focus {
+    background-color: #bb29bb; 
+}
+
 .heading {
     text-align: center;
     padding: 2rem 0;

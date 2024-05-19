@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/store.css" />
+    <link rel="stylesheet" href="/CSS/aboutUs.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <script src="/JS/store.js" async></script>
+
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="left-section">
+            <img class="headerImage" src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp"
+                alt="Grocery Store Logo" />
+            <h1 class="store-title">Fresh Mart Grocery Store</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="/HTML/home.html">Home</a>
+            <a href="/HTML/cantactUs.html">Contact Us</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <input type="button" class="logout-button" onclick="redirect()" value="Log Out" />
+        </div>
+    </header>
+
+
+
+    <section class="aboutUs">
+        <div class="about-us">
+            <h1>About Us - Fresh Mart Grocery Store</h1>
+            <p>Welcome to Fresh Mart Grocery Store, your trusted source for high-quality, fresh, and organic products.
+            </p>
+            <p>At Fresh Mart, we are committed to:</p>
+            <ul>
+                <li>Providing the freshest produce sourced directly from local farms.</li>
+                <li>Offering a wide range of organic products for a healthy lifestyle.</li>
+                <li>Ensuring the highest quality standards in every product we sell.</li>
+                <li>Delivering exceptional customer service to meet your needs.</li>
+                <li>Promoting sustainability and supporting local communities.</li>
+            </ul>
+            <p>We believe in <strong>transparency</strong> and <strong>trust</strong>, which is why we provide detailed
+                information about our products, including their sources and certifications.</p>
+            <p>Our commitment to quality is reflected in:</p>
+            <ul>
+                <li>Rigorous quality control measures at every stage of procurement and handling.</li>
+                <li>Partnering with certified organic producers and sustainable suppliers.</li>
+                <li>Regular inspections and audits to maintain freshness and safety standards.</li>
+                <li>Continuous improvement based on customer feedback and industry best practices.</li>
+            </ul>
+            <p>Join us in our mission to make healthy living accessible and enjoyable for everyone. Experience the Fresh
+                Mart difference today!</p>
+            <p>If you have any questions or need assistance, please don't hesitate to contact us at:
+                <br><strong>Email:</strong> freshmart@gmail.com
+            </p>
+            <a href="/HTML/home.html" class="btn">Shop Now</a>
+    </section>
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <img src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp" alt="" />
+                <p>Fresh Mart Grocery Store, Pune-411005</p>
+                <div class="share">
+                    <a class="fab fa-facebook-f"></a>
+                    <a class="fab fa-instagram"></a>
+                    <a class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
+                <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
+                <a class="links" style="text-transform: none;">
+                    <i class="fas fa-envelope"></i> freshmart@gmail.com
+                </a>
+                <pre><a class="links"> <i class="fas fa-map-marker-alt"></i> Pune, India - 411005</a></pre>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="/HTML/home.html" class="links">
+                    <i class="fas fa-arrow-right"></i> Home
+                </a>
+                <a href="/HTML/cantactUs.html" class="links">
+                    <i class="fas fa-arrow-right"></i> Contact us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="/JS/script.js"></script>
+    <script>
+        function redirect() {
+            window.location.href = "/index.html";
+        }
+    </script>
+</body>
+
+</html>

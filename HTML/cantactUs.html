@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/contactUs.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="left-section">
+            <img class="headerImage" src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp"
+                alt="Grocery Store Logo" />
+            <h1 class="store-title">Fresh Mart Grocery Store</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="/HTML/home.html">Home</a>
+            <a href="/HTML/aboutUs.html">About Us</a>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+            <input type="button" class="logout-button" onclick="redirect()" value="Log Out" />
+        </div>
+    </header>
+<br><br><br>
+
+<div class="container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or feedback, feel free to reach out to us.</p>
+    <form action="" id="contactForm" onsubmit="return validateForm(event)">
+        <div class="alert">Your message sent</div>
+
+        <div class="inputBox">
+            <input type="text" id="name" placeholder="Your name...." pattern="[A-Za-z ]+" required>
+            <div id="nameError" class="error-message"></div>
+        </div>
+
+        <div class="inputBox">
+            <input type="email" id="emailid" placeholder="Your Email....." pattern="[a-zA-Z0-9._%+-]+@gmail\.com" required style="text-transform: none;" >
+            <div id="emailError" class="error-message"></div>
+        </div>
+
+        <div class="inputBox">
+            <textarea id="msgContent" cols="30" rows="10" placeholder="Message" required style="text-transform: none;"></textarea>
+            <div id="msgError" class="error-message"></div>
+        </div>
+
+        <div class="inputBox">
+            <button type="submit" id="submitButton" disabled>Submit</button>
+            <div id="submitError" class="error-message"></div>
+        </div>
+    </form>
+</div>
+
+
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <img src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp" alt="" />
+                <p>Fresh Mart Grocery Store, Pune-411005</p>
+                <div class="share">
+                    <a class="fab fa-facebook-f"></a>
+                    <a class="fab fa-instagram"></a>
+                    <a class="fab fa-linkedin"></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>contact info</h3>
+                <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
+                <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
+                <a class="links" style="text-transform: none;">
+                    <i class="fas fa-envelope"></i> freshmart@gmail.com
+                </a>
+                <pre><a class="links"> <i class="fas fa-map-marker-alt"></i> Pune, India - 411005</a></pre>
+            </div>
+
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="/HTML/home.html" class="links">
+                    <i class="fas fa-arrow-right"></i> Home
+                </a>
+                <a href="/HTML/aboutUs.html" class="links">
+                    <i class="fas fa-arrow-right"></i> About us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="/JS/contactUs.js"></script>
+    <script>
+        function redirect() {
+            window.location.href = "/index.html";
+        }
+        function validateForm(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('emailid');
+            const messageInput = document.getElementById('msgContent');
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const msgError = document.getElementById('msgError');
+
+            // Reset previous errors and remove red borders
+            nameError.textContent = '';
+            emailError.textContent = '';
+            msgError.textContent = '';
+            nameInput.classList.remove('error');
+            emailInput.classList.remove('error');
+            messageInput.classList.remove('error');
+
+            let isValid = true;
+
+            // Check if name is empty or contains non-alphabetic characters
+            if (nameInput.value.trim() === '' || !/^[A-Za-z\s]+$/.test(nameInput.value.trim())) {
+                nameError.textContent = 'Please enter a valid name (only alphabets and spaces allowed)';
+                nameInput.classList.add('error');
+                isValid = false;
+            }
+
+            // Check if email is empty or not in proper format
+            if (emailInput.value.trim() === '' || !emailInput.value.trim().endsWith('@gmail.com')) {
+                emailError.textContent = 'Please enter a valid email ending with @gmail.com';
+                emailInput.classList.add('error');
+                isValid = false;
+            }
+
+            // Check if message is empty
+            if (messageInput.value.trim() === '') {
+                msgError.textContent = 'Please enter your message';
+                messageInput.classList.add('error');
+                isValid = false;
+            }
+
+            // If all fields are valid, submit the form
+            if (isValid) {
+                document.getElementById('contactForm').submit();
+            } else {
+                document.getElementById('submitError').textContent = 'Please fill in all required fields correctly.';
+            }
+
+            return false;
+        }
+
+        // Enable submit button only when all fields are filled
+        document.addEventListener('input', function() {
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('emailid');
+            const messageInput = document.getElementById('msgContent');
+            const submitButton = document.getElementById('submitButton');
+            const submitError = document.getElementById('submitError');
+
+            if (nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && messageInput.value.trim() !== '') {
+                submitButton.disabled = false;
+                submitError.textContent = '';
+            } else {
+                submitButton.disabled = true;
+            }
+        });
+    </script>
+</body>
+
+</html>

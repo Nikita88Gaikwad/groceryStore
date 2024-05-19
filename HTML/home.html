@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GetGoGroceryStore</title>
+    <title>Fresh Mart Grocery Store</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/CSS/style.css">
     <link rel="stylesheet" href="/CSS/store.css" />
+    <link rel="stylesheet" href="/CSS/header.css">
     <script src="/JS/store.js" async></script>
 
 </head>
@@ -19,7 +20,10 @@
 
     <header class="header">
         <!-- logo -->
-        <img class="headerImage" src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp" alt="">
+        <div class="left-section">
+            <img class="headerImage" src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp" alt="Grocery Store Logo" />
+            <h1 class="store-title">Fresh Mart Grocery Store</h1>
+        </div>
 
         <nav class="navbar">
             <a href="#home">home</a>
@@ -27,6 +31,8 @@
             <a href="#categories">categories</a>
             <a href="#reviews">review</a>
             <a href="#blogs">blogs</a>
+            <a href="/HTML/aboutUs.html">About us</a>
+            <a href="/HTML/cantactUs.html">Contact us</a>
         </nav>
 
         <!-- logo icons -->
@@ -34,7 +40,7 @@
             <div class="fas fa-bars" id="menu-btn"></div>
             <div class="fas fa-search" id="search-btn"></div>
             <div class="fas fa-shopping-cart" id="cart-btn"></div>
-            <input type="button" onclick="redirect()" value="Log Out">
+            <input type="button" class="logout-button" onclick="redirect()" value="Log Out">
 
         </div>
 
@@ -77,7 +83,6 @@
 
     </header>
 
-    <br><br><br><br>
     <section class="home" id="home">
         <div class="content">
             <p style="visibility: hidden;">Welcome to Fresh and Organic Delivery, your one-stop destination for
@@ -276,7 +281,7 @@
 
             <div class="box">
                 <img src="/IMAGES/shop-cart-shop-building-cartoon_138676-2085.webp" alt="">
-                <p>Grocery Store, Pune-411005</p>
+                <p>Fresh Mart Grocery Store, Pune-411005</p>
                 <div class="share">
                     <a class="fab fa-facebook-f"></a>
                     <a class="fab fa-instagram"></a>
@@ -288,7 +293,9 @@
                 <h3>contact info</h3>
                 <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
                 <a class="links"> <i class="fas fa-phone"></i>+91-123-456-7890</a>
-                <a class="links"> <i class="fas fa-envelope"></i> groceryStore@gmail.com </a>
+                <a class="links" style="text-transform: none;">
+                    <i class="fas fa-envelope"></i> freshmart@gmail.com
+                </a>
                 <pre><a class="links"> <i class="fas fa-map-marker-alt"></i> Pune, India - 411005</a></pre>
             </div>
 
@@ -299,6 +306,8 @@
                 <a href="#categories" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
                 <a href="#reviews" class="links"> <i class="fas fa-arrow-right"></i> review </a>
                 <a href="#blogs" class="links"> <i class="fas fa-arrow-right"></i> blogs </a>
+                <a href="/HTML/aboutUs.html" class="links"> <i class="fas fa-arrow-right"></i> about us </a>
+                <a href="/HTML/cantactUs.html" class="links"> <i class="fas fa-arrow-right"></i> contact us </a>
             </div>
         </div>
 
